@@ -23,4 +23,4 @@ Please analyze the above information and present a clear summary showing:
 - ⚙️  Any custom configuration settings
 - 💡 Recommendations for optimization or issues found
 
-If the commands fail or show errors, recommend running `/mcp-debug` for detailed troubleshooting.
+If the commands fail or show errors, recommend running `/docker-mcp-toolkit:gateway-debug` for detailed troubleshooting.

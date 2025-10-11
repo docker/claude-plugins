@@ -1,30 +1,36 @@
-# Docker MCP Gateway Plugin
+# Docker MCP Toolkit Plugin
 
-This plugin integrates Docker MCP Gateway with Claude Code, providing seamless access to containerized MCP servers.
+This plugin integrates Docker Desktop's MCP Toolkit with Claude Code, providing seamless access to containerized MCP servers managed by Docker Desktop.
+
+> **⚠️ Important**: This plugin is designed specifically for Docker Desktop's bundled MCP Toolkit. It is **not** intended for the standalone open-source MCP Gateway from the [mcp-gateway repository](https://github.com/docker/mcp-gateway). While it may work with the standalone version, compatibility is not guaranteed and features may differ.
 
 ## Prerequisites
 
-**This plugin requires one of the following:**
+**This plugin requires Docker Desktop with MCP Toolkit:**
 
-1. **Docker Desktop (Recommended)**
-   - Version 4.28.0 or later
-   - With MCP Toolkit feature enabled
-   - Navigate to: Settings → Beta Features → Enable "Docker MCP Toolkit"
+- **Docker Desktop** - Version 4.28.0 or later
+- **MCP Toolkit Feature Enabled** - Navigate to: Settings → Beta Features → Enable "Docker MCP Toolkit"
 
-2. **Docker MCP Gateway CLI (Standalone)**
-   - Installed independently via: `make docker-mcp` from the [mcp-gateway repository](https://github.com/docker/mcp-gateway)
-   - The `docker mcp` command must be available in your PATH
+Docker Desktop's MCP Toolkit provides:
+- Pre-configured MCP Gateway bundled with Docker Desktop
+- Integrated secrets management
+- Automatic catalog management
+- Native Docker Desktop UI integration
 
-### Verifying Installation
+### Verifying Docker Desktop MCP Toolkit
 
-Before installing this plugin, verify the Docker MCP Gateway is available:
+Before installing this plugin, verify the Docker MCP Toolkit is enabled in Docker Desktop:
 
 ```bash
 # Check if the docker mcp command is available
 docker mcp --help
 
-# Should display the MCP Gateway help information
+# Should display the MCP Gateway help information from Docker Desktop
 ```
+
+If this command fails, ensure:
+1. Docker Desktop 4.28+ is installed
+2. MCP Toolkit feature is enabled in Docker Desktop settings
 
 ## What This Plugin Does
 
@@ -38,8 +44,8 @@ When enabled, this plugin:
 
 This plugin provides helpful slash commands for managing and debugging Docker MCP Gateway:
 
-- **`/docker-mcp-gateway:mcp-status`** - Quick status check showing enabled servers and available tools
-- **`/docker-mcp-gateway:mcp-debug`** - Comprehensive diagnostics for troubleshooting gateway issues
+- **`/docker-mcp-toolkit:gateway-status`** - Quick status check showing enabled servers and available tools
+- **`/docker-mcp-toolkit:gateway-debug`** - Comprehensive diagnostics for troubleshooting gateway issues
 
 ## Usage
 
@@ -50,7 +56,7 @@ This plugin provides helpful slash commands for managing and debugging Docker MC
 /plugin marketplace add /path/to/claude-marketplace
 
 # Install the plugin
-/plugin install docker-mcp-gateway@docker-tools
+/plugin install docker-mcp-toolkit@docker
 ```
 
 ### Configuration
@@ -75,10 +81,10 @@ docker mcp config write '<yaml-config>'
 
 Once the plugin is installed and Claude Code is running, the Docker MCP Gateway will automatically start. You can verify this by:
 
-1. Running `/docker-mcp-gateway:mcp-status` to see enabled servers and tool count
+1. Running `/docker-mcp-toolkit:gateway-status` to see enabled servers and tool count
 2. Checking that MCP tools are available in Claude's toolkit
 3. Using Claude to interact with your enabled MCP servers
-4. Running `/docker-mcp-gateway:mcp-debug` if you encounter any issues
+4. Running `/docker-mcp-toolkit:gateway-debug` if you encounter any issues
 
 ## Troubleshooting
 
@@ -86,7 +92,7 @@ Once the plugin is installed and Claude Code is running, the Docker MCP Gateway 
 
 **Error**: `command not found: docker` or `unknown command: mcp`
 
-**Solution**: Ensure Docker Desktop is installed with Docker MCP Toolkit enabled (Settings → Beta Features), or install the docker-mcp CLI plugin.
+**Solution**: Ensure Docker Desktop is installed with Docker MCP Toolkit enabled (Settings → Beta Features → Enable "Docker MCP Toolkit").
 
 ### No MCP servers available
 

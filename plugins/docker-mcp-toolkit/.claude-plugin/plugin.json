@@ -1,0 +1,14 @@
+{
+  "name": "docker-mcp-toolkit",
+  "version": "1.0.0",
+  "description": "Integrates Docker Desktop's MCP Toolkit with Claude Code, enabling access to containerized MCP servers. Designed specifically for Docker Desktop's bundled MCP Gateway. Requires Docker Desktop 4.28+ with MCP Toolkit feature enabled.",
+  "author": {
+    "name": "Docker Inc.",
+    "url": "https://github.com/docker"
+  },
+  "homepage": "https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/",
+  "repository": "https://github.com/docker/mcp-gateway",
+  "license": "MIT",
+  "keywords": ["docker", "mcp", "gateway", "containers", "model-context-protocol", "docker-desktop", "mcp-toolkit"],
+  "mcpServers": "./.mcp.json"
+}
