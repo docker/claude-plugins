@@ -5,7 +5,7 @@ This repository contains a Claude Code plugin marketplace that provides Docker-r
 ## Structure
 
 ```
-claude-marketplace/
+claude-plugins/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace configuration
 └── plugins/
@@ -41,12 +41,12 @@ Add this marketplace to Claude Code using one of the following methods:
 
 **If your git works with SSH:**
 ```bash
-/plugin marketplace add docker/claude-marketplace
+/plugin marketplace add docker/claude-plugins
 ```
 
 **If your git doesn't work with SSH (or prefer HTTPS):**
 ```bash
-/plugin marketplace add https://github.com/docker/claude-marketplace.git
+/plugin marketplace add https://github.com/docker/claude-plugins.git
 ```
 
 ### Installing the Plugin

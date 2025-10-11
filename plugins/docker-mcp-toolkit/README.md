@@ -53,7 +53,7 @@ This plugin provides helpful slash commands for managing and debugging Docker MC
 
 ```bash
 # Add the marketplace (if not already added)
-/plugin marketplace add /path/to/claude-marketplace
+/plugin marketplace add /path/to/claude-plugins
 
 # Install the plugin
 /plugin install docker-mcp-toolkit@docker
