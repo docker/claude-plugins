@@ -10,8 +10,6 @@ Display the current status of Docker MCP Gateway and configured MCP servers.
 ## Current Status
 
 - **Enabled MCP Servers**: !`docker mcp server ls`
-- **Available Tools Count**: !`docker mcp tools count`
-- **Current Configuration**: !`docker mcp config read`
 
 ## Summary
 

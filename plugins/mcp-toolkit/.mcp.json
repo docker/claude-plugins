@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "docker-mcp-gateway": {
+    "mcp-gateway": {
       "command": "docker",
       "args": ["mcp", "gateway", "run"],
       "env": {}
