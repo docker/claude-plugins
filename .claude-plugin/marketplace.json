@@ -20,6 +20,19 @@
       "category": "integration",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "mcp-toolkit-beta",
+      "source": "./plugins/mcp-toolkit-beta",
+      "description": "Beta features for the Docker MCP Toolkit plugin",
+      "version": "1.0.0",
+      "author": {
+        "name": "Docker Inc."
+      },
+      "keywords": ["docker", "mcp", "gateway", "containers", "docker-desktop", "mcp-toolkit", "beta"],
+      "category": "integration",
+      "license": "MIT",
+      "strict": false
     }
   ]
 }
