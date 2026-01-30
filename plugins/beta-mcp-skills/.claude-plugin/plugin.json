@@ -1,0 +1,11 @@
+{
+  "name": "beta-mcp-skills",
+  "version": "1.0.0",
+  "description": "Beta MCP skills from Docker",
+  "author": {
+    "name": "Docker Inc.",
+    "url": "https://github.com/docker"
+  },
+  "license": "MIT",
+  "keywords": ["docker", "mcp", "gateway", "model-context-protocol", "mcp-toolkit", "beta"]
+}
