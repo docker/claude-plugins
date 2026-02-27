@@ -1,0 +1,94 @@
+# Example: Containerized MCP Server (type: server)
+# This is the most common type for custom MCP servers running in Docker
+
+name: my-server
+type: server
+title: My Custom Server
+description: A custom MCP server that provides specialized tools and capabilities
+image: myorg/my-server:latest
+
+# Optional: Icon URL for display
+icon: https://example.com/icon.png
+
+# Optional: Keep server running (true) vs start on-demand (false, default)
+longLived: false
+
+# Optional: Command arguments to pass to container
+command:
+  - "--verbose"
+  - "--port=8080"
+
+# Optional: Volume mounts (format: host:container or host:container:ro)
+volumes:
+  - "named-volume:/app/data:ro" # Use a named volume for data
+  - "{{my-server.config_path}}:/app/config:ro" # Inject a config path from the config field
+
+
+# Optional: User to run container as
+user: "1000:1000"
+
+# Optional: Network security
+# Option 1: Disable all network access
+disableNetwork: false
+
+# Option 2: Allow specific hosts only (format: hostname:port)
+allowHosts:
+  - api.example.com:443
+  - github.com:443
+
+# Optional: Secrets (API keys, tokens, passwords)
+secrets:
+  - name: my-server.api_key
+    env: API_KEY
+    example: YOUR_API_KEY
+
+# Optional: Static environment variables
+env:
+  - name: LOG_LEVEL
+    value: info
+  - name: API_ENDPOINT
+    value: "{{my-server.endpoint}}"  # References config field
+
+# Optional: User configuration
+config:
+  - name: my-server
+    description: Configure connection settings
+    type: object
+    properties:
+      endpoint:
+        type: string
+        description: API endpoint URL
+      timeout:
+        type: number
+        description: Request timeout in seconds
+      debug:
+        type: boolean
+        description: Enable debug logging
+      config_path:
+        type: string
+        description: Path to the configuration directory
+    required:
+      - endpoint
+      - config_path
+
+# Optional: Tools the server exposes, used for discovery purposes
+tools:
+  - name: tool_name
+    description: What it does
+    arguments:
+      - name: arg1
+        type: string
+        description: Description of argument 1
+      - name: arg2
+        type: string
+        description: Description of argument 2
+        optional: true
+
+# Optional: Metadata for display and categorization
+metadata:
+  category: Development
+  tags:
+    - api
+    - custom
+  license: MIT
+  owner: myorg

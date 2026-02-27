@@ -1,0 +1,50 @@
+# Example: Remote MCP Server (type: remote)
+# For MCP servers hosted remotely and accessed via HTTP/SSE
+
+name: my-remote-server
+type: remote
+title: My Remote Server
+description: A remotely hosted MCP server accessed via SSE protocol
+
+# Remote server configuration
+remote:
+  url: https://mcp.example.com/sse
+  transport_type: sse
+  # Optional: Custom HTTP headers
+  headers:
+    Authorization: Bearer {{my-remote-server.token}}
+    X-Custom-Header: value
+
+# Optional: Icon URL
+icon: https://example.com/icon.png
+
+# Optional: Secrets for authentication
+secrets:
+  - name: my-remote-server.token
+    env: AUTH_TOKEN
+    example: YOUR_AUTH_TOKEN
+
+# Optional: Configuration
+config:
+  - name: my-remote-server
+    description: Remote server configuration
+    type: object
+    properties:
+      project_id:
+        type: string
+        description: Project ID to work with
+    required:
+      - project_id
+
+# Optional: Tools the server exposes, used for discovery purposes
+tools:
+  - name: tool_name
+    description: What it does
+    arguments:
+      - name: arg1
+        type: string
+        description: Description of argument 1
+      - name: arg2
+        type: string
+        description: Description of argument 2
+        optional: true

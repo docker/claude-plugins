@@ -20,6 +20,19 @@
       "category": "integration",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "beta-mcp-skills",
+      "source": "./plugins/beta-mcp-skills",
+      "description": "Beta MCP skills from Docker",
+      "version": "1.0.0",
+      "author": {
+        "name": "Docker Inc."
+      },
+      "keywords": ["docker", "mcp", "gateway", "model-context-protocol", "mcp-toolkit", "beta"],
+      "category": "integration",
+      "license": "MIT",
+      "strict": false
     }
   ]
 }
