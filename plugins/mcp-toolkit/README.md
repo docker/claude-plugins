@@ -37,7 +37,7 @@ If this command fails, ensure:
 When enabled, this plugin:
 
 1. Automatically starts the Docker MCP Gateway as an MCP server within Claude Code
-2. Exposes all MCP servers configured in Docker Desktop (via `docker mcp server enable`)
+2. Exposes all MCP servers configured in Docker Desktop (via the MCP Toolkit UI or `docker mcp profile server add`)
 3. Makes containerized MCP tools, resources, and prompts available to Claude
 
 ## Available Commands
@@ -61,21 +61,23 @@ This plugin provides helpful slash commands for managing and debugging Docker MC
 
 ### Configuration
 
-This plugin uses the default Docker MCP Gateway configuration. To configure which MCP servers are available:
+This plugin uses the default Docker MCP Gateway configuration. The recommended workflow is to manage MCP servers via Docker Desktop's MCP Toolkit UI (Settings → MCP Toolkit). Equivalent CLI commands:
 
 ```bash
 # List available servers in the Docker MCP catalog
-docker mcp catalog show docker-mcp
+docker mcp catalog show mcp/docker-mcp-catalog
 
-# Enable specific MCP servers
-docker mcp server enable <server-name>
+# Add servers to a profile (creates one if needed)
+docker mcp profile server add <profile-id> --server <server-ref>
 
-# List currently enabled servers
-docker mcp server ls
+# List configured servers across profiles
+docker mcp profile server ls
 
 # Configure server settings (if needed)
-docker mcp config write '<yaml-config>'
+docker mcp profile config <profile-id> --set <server>.<key>=<value>
 ```
+
+See [MCP Profiles](https://docs.docker.com/ai/mcp-catalog-and-toolkit/profiles/) for the profile concept and UI workflow, and [Use MCP Toolkit from the CLI](https://docs.docker.com/ai/mcp-catalog-and-toolkit/cli/) for the accepted `<server-ref>` URIs (`catalog://`, `docker://`, `https://`, `file://`) and full command reference.
 
 ### Verification
 
@@ -98,7 +100,7 @@ Once the plugin is installed and Claude Code is running, the Docker MCP Gateway 
 
 **Error**: Gateway starts but no tools are available
 
-**Solution**: Enable MCP servers using `docker mcp server enable <server-name>`
+**Solution**: Enable MCP servers via Docker Desktop's MCP Toolkit UI, or with `docker mcp profile server add <profile-id> --server <server-ref>`
 
 ### Gateway connection issues
 
@@ -106,7 +108,7 @@ Once the plugin is installed and Claude Code is running, the Docker MCP Gateway 
 
 **Solution**:
 1. Verify Docker daemon is running: `docker ps`
-2. Check MCP server status: `docker mcp server ls`
+2. Check MCP server status: `docker mcp profile server ls`
 3. Review gateway logs for errors
 
 ## Learn More

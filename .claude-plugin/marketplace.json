@@ -12,7 +12,7 @@
       "name": "mcp-toolkit",
       "source": "./plugins/mcp-toolkit",
       "description": "Integrates Docker Desktop's MCP Toolkit with Claude Code, enabling access to containerized MCP servers. Requires Docker Desktop 4.28+ with MCP Toolkit enabled.",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "author": {
         "name": "Docker Inc."
       },
@@ -25,7 +25,7 @@
       "name": "beta-mcp-skills",
       "source": "./plugins/beta-mcp-skills",
       "description": "Beta MCP skills from Docker",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Docker Inc."
       },
