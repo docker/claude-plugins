@@ -9,7 +9,7 @@ Display the current status of Docker MCP Gateway and configured MCP servers.
 
 ## Current Status
 
-- **Enabled MCP Servers**: !`docker mcp server ls`
+- **Enabled MCP Servers**: !`docker mcp profile server ls`
 
 ## Summary
 

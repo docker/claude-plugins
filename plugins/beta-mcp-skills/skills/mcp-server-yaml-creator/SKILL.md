@@ -150,7 +150,7 @@ After creating server.yaml, add it to a profile or catalog:
 docker mcp profile server add <profile-id> --server file://./server.yaml
 
 # Create catalog with the server
-docker mcp catalog-next create <catalog-id> --title "My Catalog" --server file://./server.yaml
+docker mcp catalog create <oci-reference> --title "My Catalog" --server file://./server.yaml
 ```
 
 Be sure to ask the user what they would like to do. The recommended approach would be to create a new catalog and add it to a new catalog.
