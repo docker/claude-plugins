@@ -33,6 +33,23 @@
       "category": "integration",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "sbx-kits",
+      "source": {
+        "source": "github",
+        "repo": "docker/sbx-kits-contrib",
+        "ref": "main"
+      },
+      "description": "Author Docker Sandboxes kits (spec.yaml v2) — schema, lifecycle, composition, distribution, and TCK testing.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Docker Inc."
+      },
+      "keywords": ["docker", "sandboxes", "sbx", "kits", "spec.yaml"],
+      "category": "integration",
+      "license": "Apache-2.0",
+      "strict": false
     }
   ]
 }
