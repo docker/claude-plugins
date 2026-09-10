@@ -33,6 +33,20 @@
       "category": "integration",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "aidelly",
+      "source": "./plugins/aidelly",
+      "description": "Create, schedule, approve, and analyze social media content across connected platforms via Aidelly's public MCP server.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Aidelly",
+        "url": "https://aidelly.ai"
+      },
+      "keywords": ["social-media", "marketing", "content", "scheduling", "analytics", "mcp"],
+      "category": "integration",
+      "license": "MIT",
+      "strict": false
     }
   ]
 }
