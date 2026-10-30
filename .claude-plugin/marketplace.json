@@ -33,6 +33,22 @@
       "category": "integration",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "flisk",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/flisk-sh/flisk.git",
+        "path": "plugins/flisk"
+      },
+      "description": "Flisk App Builder. Tell your coding agent what to build (an online shop, a website, a booking app, an AI helper) and it builds the whole app and runs it on your own computer with one command.",
+      "author": {
+        "name": "Flisk"
+      },
+      "homepage": "https://flisk.sh",
+      "keywords": ["docker", "compose", "local-development", "dev-environment", "microservices", "mcp"],
+      "category": "development",
+      "license": "MIT"
     }
   ]
 }
