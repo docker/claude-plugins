@@ -41,7 +41,7 @@
         "url": "https://github.com/flisk-sh/flisk.git",
         "path": "plugins/flisk"
       },
-      "description": "Starts the local stack from service.json so the agent does not rewrite Dockerfiles. Skills and an MCP server for building, starting, checking and fixing a Docker-based local dev stack with the Flisk CLI. Requires: npm install -g @flisk-sh/flisk",
+      "description": "Flisk App Builder. Tell your coding agent what to build (an online shop, a website, a booking app, an AI helper) and it builds the whole app and runs it on your own computer with one command.",
       "author": {
         "name": "Flisk"
       },
