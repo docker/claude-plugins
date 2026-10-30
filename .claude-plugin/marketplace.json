@@ -33,6 +33,22 @@
       "category": "integration",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "flisk",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/flisk-sh/flisk.git",
+        "path": "plugins/flisk"
+      },
+      "description": "Starts the local stack from service.json so the agent does not rewrite Dockerfiles. Skills and an MCP server for building, starting, checking and fixing a Docker-based local dev stack with the Flisk CLI. Requires: npm install -g @flisk-sh/flisk",
+      "author": {
+        "name": "Flisk"
+      },
+      "homepage": "https://flisk.sh",
+      "keywords": ["docker", "compose", "local-development", "dev-environment", "microservices", "mcp"],
+      "category": "development",
+      "license": "MIT"
     }
   ]
 }
